@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Padlógáz Autósiskola – Mosonmagyaróvár</title>
+  <meta name="description" content="Autós és motoros oktatás Mosonmagyaróváron. AM, A1, A2, A és B kategória, online vagy tantermi elmélettel. Jelentkezz most!">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" href="https://padlogazmovar.hu/images/padlogaz-logo300.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Fejléc -->
+<header class="nav" id="top">
+  <div class="wrap nav__inner">
+    <a href="#top" class="brand" aria-label="Padlógáz Autósiskola – főoldal">
+      <span class="brand__mark">P</span>
+      <span class="brand__text">PADLÓGÁZ<small>Autósiskola · Mosonmagyaróvár</small></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Fő navigáció">
+      <a href="#kategoriak">Kategóriák</a>
+      <a href="#arak">Árak</a>
+      <a href="#menet">Hogyan működik</a>
+      <a href="#jarmuvek">Járművek</a>
+      <a href="#csapat">Csapat</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+      <a href="#jelentkezes" class="btn btn--red btn--sm nav__cta">Jelentkezem</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow"><span class="dot"></span> Folyamatosan induló tanfolyamok</p>
+    <h1>Jogosítvány <em>autóra</em> és <em>motorra</em> – padlógázzal, biztonságosan.</h1>
+    <p class="hero__lead">Autós-motoros oktatás Mosonmagyaróváron és környékén. Online vagy tantermi elmélet, rugalmas gyakorlati órák, tapasztalt oktatók.</p>
+    <div class="hero__actions">
+      <a href="#jelentkezes" class="btn btn--red">Jelentkezem most</a>
+      <a href="#kategoriak" class="btn btn--ghost">Kategóriák és árak</a>
+    </div>
+    <ul class="hero__chips">
+      <li>AM</li><li>A1</li><li>A2</li><li>A</li><li>B</li>
+    </ul>
+  </div>
+  <div class="road" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- Gyors tények -->
+<section class="facts">
+  <div class="wrap facts__grid">
+    <div class="fact"><b>5</b><span>oktatott kategória</span></div>
+    <div class="fact"><b>7</b><span>szakoktató</span></div>
+    <div class="fact"><b>12</b><span>autó és motor</span></div>
+    <div class="fact"><b>Online</b><span>vagy tantermi elmélet</span></div>
+  </div>
+</section>
+
+<!-- Kategóriák -->
+<section class="section" id="kategoriak">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Oktatott kategóriák</p>
+      <h2>Melyik jogsi kell neked?</h2>
+      <p class="section__sub">Válassz kategóriát – megmutatjuk a feltételeket, a vizsgák legkorábbi idejét, az óraszámokat és a teljes árat.</p>
+    </div>
+
+    <div class="mode" role="tablist" aria-label="Járműtípus">
+      <button class="mode__btn is-active" data-mode="all" role="tab" aria-selected="true">Összes</button>
+      <button class="mode__btn" data-mode="auto" role="tab" aria-selected="false">🚗 Autó</button>
+      <button class="mode__btn" data-mode="motor" role="tab" aria-selected="false">🏍️ Motor</button>
+    </div>
+
+    <div class="cats" id="cats"><!-- JS tölti --></div>
+
+    <div class="cat-detail" id="catDetail" aria-live="polite"><!-- JS tölti --></div>
+  </div>
+</section>
+
+<!-- Árak -->
+<section class="section section--alt" id="arak">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Árak</p>
+      <h2>Átlátható árak, rejtett költség nélkül</h2>
+      <p class="section__sub">A teljes képzés költsége tartalmazza a tandíjat és a vizsgadíjakat. <span class="muted">Érvényes: 2026. 07. 17-től.</span></p>
+    </div>
+
+    <div class="prices" id="prices"><!-- JS tölti --></div>
+
+    <details class="more">
+      <summary>Kiegészítő képzések (már meglévő jogosítvánnyal)</summary>
+      <div class="table-scroll">
+        <table class="ptable" id="extraPrices"></table>
+      </div>
+      <p class="muted small">Jelmagyarázat: „A1(B)” = A1 meglévő B-vel; „-2” / „+2” = meglévő kategória 2 évnél rövidebb / hosszabb gyakorlattal. JK = járműkezelési vizsga, F = forgalmi vizsga.</p>
+    </details>
+
+    <div class="note">
+      <span class="note__icon">€</span>
+      <p><b>20 év alatt?</b> Segítünk az állami támogatás igénybevételében – kérdezz minket bátran!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Hogyan működik -->
+<section class="section" id="menet">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Hogyan működik</p>
+      <h2>4 lépés a jogosítványig</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__num">01</span>
+        <h3>Jelentkezés</h3>
+        <p>Töltsd ki az űrlapot vagy hívj minket. Kell: személyi + lakcímkártya, alapfokú végzettség, orvosi alkalmassági.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">02</span>
+        <h3>Elmélet</h3>
+        <p>Online program a saját tempódban, vagy jelenléti tanfolyam a tanteremben. Utána elméleti vizsga.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">03</span>
+        <h3>Vezetés</h3>
+        <p>Gyakorlati órák rugalmas időbeosztással – akár hétvégén is. Motorosoknál előbb járműkezelés.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">04</span>
+        <h3>Forgalmi vizsga</h3>
+        <p>Felkészítünk a forgalmi vizsgára – utána már csak a jogsi átvétele van hátra. 🏁</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Járművek -->
+<section class="section section--alt" id="jarmuvek">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Járműveink</p>
+      <h2>Modern autók, megbízható motorok</h2>
+    </div>
+    <div class="fleet">
+      <div class="fleet__col">
+        <h3><span>🚗</span> Személyautók</h3>
+        <ul class="tags">
+          <li>Toyota Auris <i>diesel</i></li>
+          <li>Toyota Corolla <i>diesel</i></li>
+          <li>Opel Meriva <i>benzin-gáz</i></li>
+          <li>Volkswagen Golf <i>diesel</i></li>
+          <li>Citroën C3 <i>diesel</i></li>
+          <li class="tag--hl">Renault Scénic <i>automata, benzin</i></li>
+        </ul>
+      </div>
+      <div class="fleet__col">
+        <h3><span>🏍️</span> Motorok</h3>
+        <ul class="tags">
+          <li>Honda CB600F</li>
+          <li>Kawasaki ER-6n</li>
+          <li>Yamaha FZ6N</li>
+          <li>Kawasaki ER-5</li>
+          <li>Yamaha YBR125</li>
+          <li>Simson S51B</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gallery" id="gallery">
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/2auto.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/2auto.jpg" alt="Oktatóautók" loading="lazy"></button>
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/autok-motorok.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/autok-motorok.jpg" alt="Autók és motorok" loading="lazy"></button>
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/toyota.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/toyota.jpg" alt="Toyota oktatóautó" loading="lazy"></button>
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/3auto.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/3auto.jpg" alt="Oktatóautók a telephelyen" loading="lazy"></button>
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/iroda.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/iroda.jpg" alt="Iroda" loading="lazy"></button>
+      <button data-src="https://padlogazmovar.hu/images/kepgaleria/ajandekutalvany2.jpg"><img src="https://padlogazmovar.hu/images/kepgaleria/ajandekutalvany2.jpg" alt="Ajándékutalvány" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- Csapat -->
+<section class="section" id="csapat">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Csapatunk</p>
+      <h2>Oktatók, akikkel jó vezetni</h2>
+      <p class="section__sub">Nyugodt, jó hangulatú órák, rugalmas időbeosztás. Kattints egy oktatóra a bemutatkozásért.</p>
+    </div>
+    <div class="team" id="team"><!-- JS tölti --></div>
+  </div>
+</section>
+
+<!-- Bizalom -->
+<section class="trust">
+  <div class="wrap trust__inner">
+    <div>
+      <h2>Arany vállalkozás 🏆</h2>
+      <p>Fontos nekünk tanulóink elégedettsége az ügyintézéstől a forgalmi vizsgáig. Nézd meg a hivatalos vizsgamutatóinkat is!</p>
+    </div>
+    <div class="trust__actions">
+      <a class="btn btn--light" href="https://vizsgakozpont.hu/ako_vsm?institution=3941" target="_blank" rel="noopener">Mutatószámok (ÁKO, VSM) ↗</a>
+      <a class="btn btn--ghost-light" href="https://www.aranyvallalkozas.eu/company/padlogaz-autosiskola-movar-154342" target="_blank" rel="noopener">Arany vállalkozás ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- Jelentkezés + kapcsolat -->
+<section class="section" id="jelentkezes">
+  <div class="wrap signup">
+    <div class="signup__form card">
+      <p class="eyebrow">Jelentkezés</p>
+      <h2>Kezdjük el!</h2>
+      <p class="muted">Add meg az adataidat, és hamarosan felvesszük veled a kapcsolatot.</p>
+      <form id="signupForm" novalidate>
+        <fieldset class="pick">
+          <legend>Kategória *</legend>
+          <label><input type="radio" name="kat" value="AM" required><span>AM</span></label>
+          <label><input type="radio" name="kat" value="A1"><span>A1</span></label>
+          <label><input type="radio" name="kat" value="A2"><span>A2</span></label>
+          <label><input type="radio" name="kat" value="A"><span>A</span></label>
+          <label><input type="radio" name="kat" value="B"><span>B</span></label>
+        </fieldset>
+        <div class="row">
+          <label class="field"><span>Név *</span><input name="nev" autocomplete="name" required></label>
+          <label class="field"><span>Telefon *</span><input name="tel" type="tel" autocomplete="tel" required></label>
+        </div>
+        <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email"></label>
+        <fieldset class="pick pick--wide">
+          <legend>Elméleti képzés</legend>
+          <label><input type="radio" name="elmelet" value="Online" checked><span>Online</span></label>
+          <label><input type="radio" name="elmelet" value="Tantermi"><span>Tantermi</span></label>
+        </fieldset>
+        <label class="field"><span>Üzenet</span><textarea name="uzenet" rows="3" placeholder="Pl. mikor érsz rá, van-e már jogosítványod…"></textarea></label>
+        <label class="check"><input type="checkbox" name="gdpr" required> <span>Elolvastam és elfogadom az <a href="https://padlogazmovar.hu/images/dokumentumok/Adatkezeles-2025.pdf" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>. *</span></label>
+        <p class="form-msg" id="formMsg" role="status"></p>
+        <button class="btn btn--red btn--block" type="submit">Jelentkezés elküldése</button>
+      </form>
+    </div>
+
+    <div class="signup__side" id="kapcsolat">
+      <div class="card contact">
+        <h3>Elérhetőség</h3>
+        <a class="contact__row" href="tel:+36707299999"><span class="ic">📞</span><span><b>+36 70 729 9999</b><small>Hívj bátran</small></span></a>
+        <a class="contact__row" href="mailto:padlogazmovar@gmail.com"><span class="ic">✉️</span><span><b>padlogazmovar@gmail.com</b><small>Írj nekünk</small></span></a>
+        <a class="contact__row" href="https://maps.google.com/?q=9200+Mosonmagyaróvár+Kórház+u.+34." target="_blank" rel="noopener"><span class="ic">📍</span><span><b>9200 Mosonmagyaróvár, Kórház u. 34.</b><small>Útvonaltervezés ↗</small></span></a>
+        <div class="contact__row"><span class="ic">🕙</span><span><b>H–P: 10:00 – 17:00</b><small>Ügyfélfogadás</small></span></div>
+        <div class="social">
+          <a href="https://www.facebook.com/padlogazmovar" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://instagram.com/padlogaz.movar" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="map card">
+        <iframe title="Térkép – Padlógáz Autósiskola" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Mosonmagyar%C3%B3v%C3%A1r%2C%20K%C3%B3rh%C3%A1z%20u.%2034.&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>
+      <a href="#top" class="brand brand--footer"><span class="brand__mark">P</span><span class="brand__text">PADLÓGÁZ<small>Autósiskola · Mosonmagyaróvár</small></span></a>
+      <p class="muted small">Folyamatosan indulnak online és tantermi oktatásaink AM, A1, A2, A és B kategóriákban.</p>
+    </div>
+    <nav class="footer__links" aria-label="Dokumentumok">
+      <a href="https://padlogazmovar.hu/images/dokumentumok/IMPRESSZUM.pdf" target="_blank" rel="noopener">Impresszum</a>
+      <a href="https://padlogazmovar.hu/images/dokumentumok/Adatkezeles-2025.pdf" target="_blank" rel="noopener">Adatkezelési tájékoztató</a>
+      <a href="https://padlogazmovar.hu/images/dokumentumok/vallalkozasi-feltetelek.pdf" target="_blank" rel="noopener">Vállalkozási feltételek</a>
+      <a href="https://padlogazmovar.hu/images/dokumentumok/panaszkezeles.pdf" target="_blank" rel="noopener">Panaszkezelés</a>
+      <a href="https://padlogazmovar.hu/index.php/nyeremenyjatek" target="_blank" rel="noopener">Nyereményjáték</a>
+    </nav>
+  </div>
+  <div class="wrap footer__bottom small muted">© <span id="year">2026</span> Padlógáz Autósiskola Mosonmagyaróvár</div>
+</footer>
+
+<!-- Mobilon mindig látható gyors gombok -->
+<div class="quickbar">
+  <a href="tel:+36707299999" class="quickbar__call">📞 Hívás</a>
+  <a href="#jelentkezes" class="quickbar__go">Jelentkezem</a>
+</div>
+
+<!-- Lightbox / oktató modal -->
+<dialog class="modal" id="modal">
+  <button class="modal__close" aria-label="Bezárás" id="modalClose">×</button>
+  <div id="modalBody"></div>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
