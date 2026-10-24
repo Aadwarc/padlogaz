@@ -197,8 +197,7 @@ $('#team').addEventListener('click', e => {
   if (!b) return;
   const [name, role, img, bio] = TEAM[b.dataset.i];
   openModal(`<div class="bio"><img src="${IMG}${img}" alt="${name}"><div>
-    <p class="eyebrow">${role}</p><h3>${name}</h3><p>${bio}</p>
-    <a href="#jelentkezes" class="btn btn--red" onclick="document.getElementById('modal').close()">Jelentkezem</a></div></div>`);
+    <p class="eyebrow">${role}</p><h3>${name}</h3><p>${bio}</p></div></div>`);
 });
 $('#gallery').addEventListener('click', e => {
   const b = e.target.closest('button');
